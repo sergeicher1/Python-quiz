@@ -1,20 +1,22 @@
 # to clear screen in final version
-import time  # to delay 
+import time  # to delay
+import os # to clear the screen
 
 # count total score, is a global variable , will be accessible through the whole program ,initialized  like int with
 # totalScore for all exercises
 totalScore = 0
-#for score inside the quizes make global score for function and change to 0 inside quizes , may be needed score as argument for this function ? In future add score counting through the whole program and shorter the code!!!!!!!!!!
-score = 0 
+# for score inside the quizzes make global score for function and change to 0 inside quizzes , may be needed score as
+# argument for this function ? In future add score counting through the whole program and shorter the code!!!!!!!!!!
+score = 0
 
 
-            
 def rightAnswer():
     print("You are right!")
     time.sleep(2)
     global totalScore
     totalScore += 1
-    
+
+
 def wrongAnswer():
     print("mmm............ ")
     time.sleep(3)
@@ -22,12 +24,14 @@ def wrongAnswer():
     time.sleep(2)
     global totalScore
     totalScore -= 1
-    
+
+
 def noAnswer():
     print("You didn't give the answer... the score is remaining")
     time.sleep(2)
-    
-#def checkTheAnswer(): Figure out how to shorter the code with fincion for check ? it will always be the same right answer may be 3 checks ? and figure out how to avoid score error ??? 
+
+
+# def checkTheAnswer(): Figure out how to shorter the code with fincion for check ? it will always be the same right answer may be 3 checks ? and figure out how to avoid score error ???
 def checkAns1():
     global score
     if ans == "1":
@@ -35,19 +39,25 @@ def checkAns1():
         score += 1
         print(f"The score is {score}")
         time.sleep(2)
+        os.system("cls")
     elif ans == "2":
         wrongAnswer()
         score -= 1
         print(f"The score is {score}")
         time.sleep(2)
+        os.system("cls")
     elif ans == "3":
         wrongAnswer()
         score -= 1
         print(f"The score is {score}")
         time.sleep(2)
+        os.system("cls")
     else:
         noAnswer()
-# if the answer is 2       
+        os.system("cls")
+
+
+# if the answer is 2
 def checkAns2():
     global score
     if ans == "1":
@@ -55,19 +65,25 @@ def checkAns2():
         score -= 1
         print(f"The score is {score}")
         time.sleep(2)
+        os.system("cls")
     elif ans == "2":
         rightAnswer()
         score += 1
         print(f"The score is {score}")
         time.sleep(2)
+        os.system("cls")
     elif ans == "3":
         wrongAnswer()
         score -= 1
         print(f"The score is {score}")
         time.sleep(2)
+        os.system("cls")
     else:
         noAnswer()
-# if the answer is 3       
+        os.system("cls")
+
+
+# if the answer is 3
 def checkAns3():
     global score
     if ans == "1":
@@ -75,19 +91,25 @@ def checkAns3():
         score -= 1
         print(f"The score is {score}")
         time.sleep(2)
+        os.system("cls")
     elif ans == "2":
         wrongAnswer()
         score -= 1
         print(f"The score is {score}")
         time.sleep(2)
+        os.system("cls")
     elif ans == "3":
         rightAnswer()
         score += 1
         print(f"The score is {score}")
         time.sleep(2)
+        os.system("cls")
     else:
         noAnswer()
-#if both are right         
+        os.system("cls")
+
+
+# if both are right
 def checkAnsBoth():
     global score
     if ans == "1":
@@ -95,26 +117,30 @@ def checkAnsBoth():
         score += 1
         print(f"The score is {score}")
         time.sleep(2)
+        os.system("cls")
     elif ans == "2":
         rightAnswer()
         score += 1
         print(f"The score is {score}")
         time.sleep(2)
+        os.system("cls")
     elif ans == "3":
         rightAnswer()
         score += 1
         print(f"The score is {score}")
         time.sleep(2)
+        os.system("cls")
     else:
         noAnswer()
-    
-        
-        
+        os.system("cls")
+
+
 # again variable is a boolean to let the program move to the next question True - correct answer , False try again
 practice = True
 
 # the program starts here:
-print("Hello,\nThis is python exercises to practice in quiz way\nYou can face (good)bugs in this program, so feel free to contact me by email: sergeicher87@gmail.com or whatsapp +972535270505\n\tSergei Chernyahovsky ;)\nThe source code could be found at my site : sergeicher.pro\n so feel free to open JIRA project to practice and work on bugs together, fix every bugs found with your team and send me the fixed code to change! ")
+print(
+    "Hello,\nThis is python exercises to practice in quiz way\nYou can face (good)bugs in this program, so feel free to contact me by email: sergeicher87@gmail.com or whatsapp +972535270505\n\tSergei Chernyahovsky ;)\nThe source code could be found at my site : sergeicher.pro\n so feel free to open JIRA project to practice and work on bugs together, fix every bugs found with your team and send me the fixed code to change! ")
 time.sleep(5)
 print("At the beginning exercises will be HARDCODED for better understanding of the learning stuff")
 time.sleep(2)
@@ -125,23 +151,21 @@ age = int(input("Please enter your age: "))
 nextAge = age + 1
 print(f"Hello,{name}\nLet's begin the Practice!")
 
+# entry point to specific practice
+# add loop to choose practices in the end of each practice
 
-#entry point to specific practice 
-#add loop to choose practices in the end of each practice 
 
-
-while(practice):
-    #Practice number 1 : 
+while (practice):
+    # Practice number 1 :
     choice = input("Please select practice number: ")
 
     if choice == "1":
-        #score in 
-        score = 0 
+        # score in
+        score = 0
         print("You chose the practice number : Basic python and pyCharm")
         time.sleep(2)
 
         # to clear screen in final version
-   
 
         ans = input(
             "Programs to use Python we need to install:\n1-Python Interpreter\n2-Python Interpreter and IDE-pyCharm\nYour "
@@ -149,89 +173,85 @@ while(practice):
         checkAnsBoth()
 
         # to clear screen in final version
-     
 
         ans = input(
             "To create a new project in pyCharm we need:\n1-Click on File -> New Project->Choose Name and Location to save "
             "and Click on Create Button\n2-In open projects explorer right-click on project and CLick -> New File\nYour "
-         "answer:")
+            "answer:")
         checkAns1()
 
         # to clear screen in final version
-         
 
-        ans = input("To create a new File in pyCharm we need:\n1-In Projects explorer -> Right-Click on existing project -> New File "
+        ans = input(
+            "To create a new File in pyCharm we need:\n1-In Projects explorer -> Right-Click on existing project -> New File "
             "-> write a name for new File and choose Python file\n2-Click on the Button: Create new program file\nYour answer "
             "is: ")
         checkAns1()
 
         # to clear screen in final version
-     
 
         ans = input("Write a command to print name,lastName,age,nextAge\nWhich one is right:\n1-print("
-            "\"Name:name\"+\"Lastname:lName\"+\"Age:age\"+\"nextAge:nextAge\")\n2-print(\"Name:name,LastNAme:lastName,"
-            "Age:age,Next Age:nextAge\")\nYour answer will be:")
+                    "\"Name:name\"+\"Lastname:lName\"+\"Age:age\"+\"nextAge:nextAge\")\n2-print(\"Name:name,LastNAme:lastName,"
+                    "Age:age,Next Age:nextAge\")\nYour answer will be:")
 
         checkAns2()
 
         # to clear screen in final version
-     
 
-        ans = input("To write a comment(s) we can use:\n1-(//)for one line comment,(/**/)for multi-line comments\n2-(#)for one line "
+        ans = input(
+            "To write a comment(s) we can use:\n1-(//)for one line comment,(/**/)for multi-line comments\n2-(#)for one line "
             "comment,(\''')for multiline comments\nYour answer is:")
 
         checkAns2()
 
         # to clear screen in final version
-    
 
-        ans = input("To run the program you need:\n1-Right-Click in text editor and hit run\n2-Call the teamLead\nYour answer is:")
-        
+        ans = input(
+            "To run the program you need:\n1-Right-Click in text editor and hit run\n2-Call the teamLead\nYour answer is:")
+
         checkAns1()
 
         # to clear screen in final version
-    
+
         ans = input("Write a command to print name,lastName,age,nextAge\nWhich one is right:\n1-print("
-            "\"Name:name\"+\"Lastname:lName\"+\"Age:age\"+\"nextAge:nextAge\")\n2-print(\"Name:{}\"+\"LastName:{}\"+\"Age:{"
-            "}\"+\"nextAge:{}\").format(name,lName,age,nextAge)\nYour answer will be:")
+                    "\"Name:name\"+\"Lastname:lName\"+\"Age:age\"+\"nextAge:nextAge\")\n2-print(\"Name:{}\"+\"LastName:{}\"+\"Age:{"
+                    "}\"+\"nextAge:{}\").format(name,lName,age,nextAge)\nYour answer will be:")
 
         checkAns2()
 
-        #prints the score for the quiz 
+        # prints the score for the quiz
         print(f"You finished the quiz!\n{name} {lName}\n\tYour score for this quiz is {score}\n")
-    
+
         next = input("To finish type: stop\nTo choose another practice type: next\n\tYour choice is: ")
-        if(next == "stop"):
+        if (next == "stop"):
             practice = False
-    
-#######################################################################################################
-    
-    #Practice number 2 :
+
+    #######################################################################################################
+
+    # Practice number 2 :
     if choice == "2":
-        #score in 
-        score = 0 
+        # score in
+        score = 0
         print("You chose the practice number : Variables and Casting")
         time.sleep(2)
-    
+
         # to clear screen in final version
-    
+
         ans = input(
             "To create variables we use:\n1-int a == \"Practice\"\n2-a = \"Practice\"\n3-a = \"Practice\";\n\tYour answer "
             "will be:")
-        
+
         checkAns2()
 
         # to clear screen in final version
 
-
         ans = input(
-        "Create a variable that gets and prints the type of this variable\n1-type = type(name)\nprint(type)\n2-print("
-        "type(\"name\")\n3-print(type(name?))\n\tYour answer will be:")
+            "Create a variable that gets and prints the type of this variable\n1-type = type(name)\nprint(type)\n2-print("
+            "type(\"name\")\n3-print(type(name?))\n\tYour answer will be:")
 
         checkAns1()
 
         # to clear screen in final version
-
 
         ans = input("Assign int to variable:\n1-int a = \"23\"\n2-a = 35\n3-a = (35)\n\tYour answer will be:")
 
@@ -239,13 +259,12 @@ while(practice):
 
         # to clear screen in final version
 
-
-        ans = input("Assign string to variable:\n1-String a = \"Tom\"\n2-a = \"Tom\"\n3-a = (\"Tom\")\n\tYour answer will be:")
+        ans = input(
+            "Assign string to variable:\n1-String a = \"Tom\"\n2-a = \"Tom\"\n3-a = (\"Tom\")\n\tYour answer will be:")
 
         checkAns2()
 
         # to clear screen in final version
-
 
         ans = input(
             "We have 2 Vars:\tfirst var with int value, second var str value like\"20\"\nTo print the sum of 2 "
@@ -256,314 +275,313 @@ while(practice):
 
         # to clear screen in final version
 
-
         ans = input(
-        "We have 2 Vars:\tfirst var with int value, second var str value like\"20\"\nTo print the multiply of 2 "
-        "vars:\n1-print(first*second)\n2-print(first * int(second))\n3-print(str(first)*str(second)) \n\tYour answer will "
-        "be:")
+            "We have 2 Vars:\tfirst var with int value, second var str value like\"20\"\nTo print the multiply of 2 "
+            "vars:\n1-print(first*second)\n2-print(first * int(second))\n3-print(str(first)*str(second)) \n\tYour answer will "
+            "be:")
 
         checkAns2()
 
         # to clear screen in final version
 
         ans = input(
-        "We have 2 Vars:\tfirst var with int value, second var str value like\"20\"\nTo print those vars in one line "
-        ":\n1-print(\"first: {}\"+\"second:{}\").format(first,second)\n2-print("
-        "\"first:first\"+\"second:second\")\n3-print(\"first:first\"+\"second:second\").format(first,second))\n\tYour "
-        "answer will be:")
+            "We have 2 Vars:\tfirst var with int value, second var str value like\"20\"\nTo print those vars in one line "
+            ":\n1-print(\"first: {}\"+\"second:{}\").format(first,second)\n2-print("
+            "\"first:first\"+\"second:second\")\n3-print(\"first:first\"+\"second:second\").format(first,second))\n\tYour "
+            "answer will be:")
 
         checkAns1()
 
         # to clear screen in final version
-    
-        #prints the score for the quiz 
+
+        # prints the score for the quiz
         print(f"You finished the quiz!\n{name} {lName}\n\tYour score for this quiz is {score}\n")
-        #To go to next practice ? 
+        # To go to next practice ?
         next = input("To finish type: stop\nTo choose another practice type: next\n\tYour choice is: ")
-        if(next == "stop"):
+        if (next == "stop"):
             practice = False
 
-
-########################################################################################################
+    ########################################################################################################
     if choice == "3":
-        #score in 
-        score = 0 
+        # score in
+        score = 0
         print("You chose the practice number : Variables and Input")
         time.sleep(2)
 
-    
         # to clear screen in final version
-   
 
         ans = input("To create a var that gets a value from user we need to use:\n1-please input your number...\n"
-                     "2-value = input(\"Enter your number:\")\n3-input = Console.write-line(\"Enter your number:\")\n"
-                     "\tYour answer will be:")
+                    "2-value = input(\"Enter your number:\")\n3-input = Console.write-line(\"Enter your number:\")\n"
+                    "\tYour answer will be:")
 
         checkAns2()
 
         # to clear screen in final version
-      
 
         ans = input("The right way to print numbers from user input:\n"
-                     "1- a = ReadInput(\"Enter number:\")\nprint(\"a\")\n"
-                     "2-a = input(\"Enter number:\")\nb = input(\"Enter number:\")\nc = input(\"Enter number:\")\n"
-                     "print(a,b,c)\n"
-                     "3- a = input(\"Enter number:\")\n"
-                     "b = input(\"Enter number:\")\nc = input(\"Enter number:\")\n"
-                     "print(all these numbers from input)\n\tYour answer will be:")
+                    "1- a = ReadInput(\"Enter number:\")\nprint(\"a\")\n"
+                    "2-a = input(\"Enter number:\")\nb = input(\"Enter number:\")\nc = input(\"Enter number:\")\n"
+                    "print(a,b,c)\n"
+                    "3- a = input(\"Enter number:\")\n"
+                    "b = input(\"Enter number:\")\nc = input(\"Enter number:\")\n"
+                    "print(all these numbers from input)\n\tYour answer will be:")
 
         checkAns2()
 
         # to clear screen in final version
-     
 
         ans = input("The right way to print the average of 3 numbers from user input:\n"
-                     "1- avg = (a+b+c)/3\nprint(\"The average is: {}\".format(avg))\n"
-                     "2- print(\"The average is: {(a+b+c)/3}\")\n"
-                     "3- avg = print(\"The avg is: {(a+b+c)/3}\") \n\tYour answer will be:")
+                    "1- avg = (a+b+c)/3\nprint(\"The average is: {}\".format(avg))\n"
+                    "2- print(\"The average is: {(a+b+c)/3}\")\n"
+                    "3- avg = print(\"The avg is: {(a+b+c)/3}\") \n\tYour answer will be:")
 
         checkAns2()
 
         # to clear screen in final version
-      
 
         ans = input("The right way to print the sum of 3 numbers from user input:\n"
-                     "1- sum = a+b+c\nprint(\"The sum is: {}\".format(avg))\n"
-                     "2- print(\"The sum is: {a+b+c}\")\n"
-                     "3- sum = print(\"The sum is: {a+b+c}\") \n\tYour answer will be:")
+                    "1- sum = a+b+c\nprint(\"The sum is: {}\".format(avg))\n"
+                    "2- print(\"The sum is: {a+b+c}\")\n"
+                    "3- sum = print(\"The sum is: {a+b+c}\") \n\tYour answer will be:")
 
         checkAns2()
 
         # to clear screen in final version
-        
 
         ans = input("The right way to print the multiply of 3 numbers from user input:\n"
-                     "1- multiply = print(\"The multiply is: {a*b*c}\")"
-                     "2- print(\"The multiply is: {a*b*c}\")\n"
-                     "3- multiply = a*b*c\nprint(\"The multiply is: {}\".format(multiply))\n \n\tYour answer will be:")
+                    "1- multiply = print(\"The multiply is: {a*b*c}\")"
+                    "2- print(\"The multiply is: {a*b*c}\")\n"
+                    "3- multiply = a*b*c\nprint(\"The multiply is: {}\".format(multiply))\n \n\tYour answer will be:")
 
         checkAns2()
-            
+
         # to clear screen in final version
 
-        #prints the score for the quiz 
+        # prints the score for the quiz
         print(f"You finished the quiz!\n{name} {lName}\n\tYour score for this quiz is {score}\n")
-        
-        #To go to next practice ? 
-        next = input("To finish type: stop\nTo choose another practice type: next\n\tYour choice is: ")
-        if(next == "stop"):
-            practice = False
-      
 
-########################################################################################################
+        # To go to next practice ?
+        next = input("To finish type: stop\nTo choose another practice type: next\n\tYour choice is: ")
+        if (next == "stop"):
+            practice = False
+
+    ########################################################################################################
     if choice == "4":
-        #score in 
-        score = 0 
+        # score in
+        score = 0
         print("You chose the practice number : \"If\", \"elif\", \"else\" staements")
         time.sleep(2)
 
-    
         # to clear screen in final version
-   
 
-        ans = input("To check the sum of two given numbers is bigger than third,Which on is correct:\n1-if((a+b)>c):\nprint(\"The sum of (a) and (b) is bigger than (c)\")\n2-check(a+b>c)\nprint(a+b>c)\n3-if(a+b>c):\nprint({sum} is bigger than c).format(sum,c)\n\tYour answer will be:")
+        ans = input(
+            "To check the sum of two given numbers is bigger than third,Which on is correct:\n1-if((a+b)>c):\nprint(\"The sum of (a) and (b) is bigger than (c)\")\n2-check(a+b>c)\nprint(a+b>c)\n3-if(a+b>c):\nprint({sum} is bigger than c).format(sum,c)\n\tYour answer will be:")
 
         checkAns1()
 
         # to clear screen in final version
-    
-        ans = input("To check the variable is equal to stored variable and print the correct message:\n1 - if(var == \"stored var\"):\nprint(\"They are equal\")\n2 - elif(var == \"stored var\"):\nprint(\"They are equal\")\n3 - else(var == \"stored var\"):\nprint(\"They are equal\")\n\tYour answer will be:")
+
+        ans = input(
+            "To check the variable is equal to stored variable and print the correct message:\n1 - if(var == \"stored var\"):\nprint(\"They are equal\")\n2 - elif(var == \"stored var\"):\nprint(\"They are equal\")\n3 - else(var == \"stored var\"):\nprint(\"They are equal\")\n\tYour answer will be:")
 
         checkAns1()
 
         # to clear screen in final version
-        ans = input("To print the correct message while all checks are failed:\n1 - else(print(\"The other message\"))\n2 - print(\"The other message\")\n3 - else:\n\tprint(\"The other message\")\n\tYour answer will be:")
+        ans = input(
+            "To print the correct message while all checks are failed:\n1 - else(print(\"The other message\"))\n2 - print(\"The other message\")\n3 - else:\n\tprint(\"The other message\")\n\tYour answer will be:")
 
         checkAns3()
 
         # to clear screen in final version
-        ans = input("To compare 2 statements you can use:\n1 - AND, OR\n2 - &, ||\n3- (a)compare to (b)\n\tYour answer will be:")
+        ans = input(
+            "To compare 2 statements you can use:\n1 - AND, OR\n2 - &, ||\n3- (a)compare to (b)\n\tYour answer will be:")
 
         checkAns1()
-            
-        # to clear screen in final version
-        
-        #prints the score for the quiz 
-        print(f"You finished the quiz!\n{name} {lName}\n\tYour score for this quiz is {score}\n")
-        
 
-        
-        
-        #To go to next practice ? 
+        # to clear screen in final version
+
+        # prints the score for the quiz
+        print(f"You finished the quiz!\n{name} {lName}\n\tYour score for this quiz is {score}\n")
+
+        # To go to next practice ?
         next = input("To finish type: stop\nTo choose another practice type: next\n\tYour choice is: ")
-        if(next == "stop"):
+        if (next == "stop"):
             practice = False
 
-########################################################################################################
+    ########################################################################################################
     if choice == "5":
-        #score in 
-        score = 0 
+        # score in
+        score = 0
         print("You chose the practice number : Data Collection types")
         time.sleep(2)
-    
+
         # to clear screen in final version
-    
-        ans = input("There are 4 Data Collection types in PYTHON, which one is correct:\n1 - List,Tuple,Set,Dictionary\n2 - Array,Tuple,Set,Dictionary\n3 - List,Tuple,Array,Dictionary\n\tYour answer will be:")
+
+        ans = input(
+            "There are 4 Data Collection types in PYTHON, which one is correct:\n1 - List,Tuple,Set,Dictionary\n2 - Array,Tuple,Set,Dictionary\n3 - List,Tuple,Array,Dictionary\n\tYour answer will be:")
 
         checkAns1()
 
         # to clear screen in final version
-    
-        ans = input("To define List:\n1-myList = [\"var1\"],[\"var2\"]\n2-myList = [\"var\",\"var2\"]\n3 - myList = {\"var1\",\"var2\"}\n\tYour answer will be:")
+
+        ans = input(
+            "To define List:\n1-myList = [\"var1\"],[\"var2\"]\n2-myList = [\"var\",\"var2\"]\n3 - myList = {\"var1\",\"var2\"}\n\tYour answer will be:")
 
         checkAns2()
 
         # to clear screen in final version
-    
-        ans = input("To print the length of the list, which on is correct:\n1 - print(len(myList))\n2 - print(myList.Length)\n3 - print(mtList.getLength())\n\tYour answer will be:")
+
+        ans = input(
+            "To print the length of the list, which on is correct:\n1 - print(len(myList))\n2 - print(myList.Length)\n3 - print(mtList.getLength())\n\tYour answer will be:")
 
         checkAns1()
 
         # to clear screen in final version
-    
-        ans = input("Correct function to sort the List and print it:\n1 - myList.sort()\nprint(myList)\n2 - sort(myList)\nprint(myList)\n3 - myList(sort)\nprint(myList)\n\tYour answer will be:")
+
+        ans = input(
+            "Correct function to sort the List and print it:\n1 - myList.sort()\nprint(myList)\n2 - sort(myList)\nprint(myList)\n3 - myList(sort)\nprint(myList)\n\tYour answer will be:")
 
         checkAns1()
 
         # to clear screen in final version
-    
-        ans = input("To print item from List with certain index:\n1 - print(myList[0])\n2 - print(myList.index(0))\n3 -  print(myList(0))\n\tYour answer will be:")
+
+        ans = input(
+            "To print item from List with certain index:\n1 - print(myList[0])\n2 - print(myList.index(0))\n3 -  print(myList(0))\n\tYour answer will be:")
 
         checkAns1()
 
         # to clear screen in final version
-    
-        ans = input("To change item at certain index:\n1 - myList[2] = \"New Value\"\nprint(myList)\n2 - myList(2) = \"New Value\"\nprint(myList)\n3 - myList.atIndex(2) = \"New Value\"\nprint(myList)\n\tYour answer will be:")
+
+        ans = input(
+            "To change item at certain index:\n1 - myList[2] = \"New Value\"\nprint(myList)\n2 - myList(2) = \"New Value\"\nprint(myList)\n3 - myList.atIndex(2) = \"New Value\"\nprint(myList)\n\tYour answer will be:")
 
         checkAns1()
 
         # to clear screen in final version
-    
-        ans = input("To add item to List:\n1 - myList.appen(\"New Value\")\nprint(myList)\n2 - myList.append = \"New Value\"\nprint(myList)\n3 - myList.append(last) = \"New Value\"\nprint(myList)\n\tYour answer will be:")
+
+        ans = input(
+            "To add item to List:\n1 - myList.appen(\"New Value\")\nprint(myList)\n2 - myList.append = \"New Value\"\nprint(myList)\n3 - myList.append(last) = \"New Value\"\nprint(myList)\n\tYour answer will be:")
 
         checkAns1()
 
         # to clear screen in final version
-    
-        ans = input("To remove item from List:\n1 - myList.remove(\"Value\")\nprint(myList)\n2 - myList.remove = \"Value\"\nprint(myList)\n3 - myList.remove() = \"New Value\"\nprint(myList)\n\tYour answer will be:")
+
+        ans = input(
+            "To remove item from List:\n1 - myList.remove(\"Value\")\nprint(myList)\n2 - myList.remove = \"Value\"\nprint(myList)\n3 - myList.remove() = \"New Value\"\nprint(myList)\n\tYour answer will be:")
 
         checkAns1()
 
         # to clear screen in final version
-        ans = input("To check if Value is in List:\n1- if \"Value\" in myList:\nprint(\"The value found in myList\")\n2 - if myList contains: \"Value\"\nprint(\"The value found in myList\")\n3 - if item[\"Value\"] is in myList:\nprint(\"The value found in myList\")\n\tYour answer will be:")
+        ans = input(
+            "To check if Value is in List:\n1- if \"Value\" in myList:\nprint(\"The value found in myList\")\n2 - if myList contains: \"Value\"\nprint(\"The value found in myList\")\n3 - if item[\"Value\"] is in myList:\nprint(\"The value found in myList\")\n\tYour answer will be:")
 
         checkAns1()
 
         # to clear screen in final version
-        #prints the score for the quiz 
+        # prints the score for the quiz
         print(f"You finished the quiz!\n{name} {lName}\n\tYour score for this quiz is {score}\n")
-        
-        #To go to next practice ? 
-        next = input("To finish type: stop\nTo choose another practice type: next\n\tYour choice is: ")
-        if(next == "stop"):
-            practice = False
-        
 
-#########################################################################################################
+        # To go to next practice ?
+        next = input("To finish type: stop\nTo choose another practice type: next\n\tYour choice is: ")
+        if (next == "stop"):
+            practice = False
+
+    #########################################################################################################
     if choice == "6":
-        #score in 
-        
-        score = 0 
-        
+        # score in
+
+        score = 0
+
         print("You chose the practice : Data Collection types")
         time.sleep(2)
-        
-        ans = input("To define a Tuple we use:\n1 - myTuple = ( , , )\n2 - myTuple = {, , }\n3 - myTuple = [ , , ]\n\tYour answer will be:")
-        checkAns1()
-      
-        
-          
 
-        ans = input("To define a Set we use:\n1 - mySet = ( , , )\n2 - mySet = {, , }\n3 - mySet = [ , , ]\n\tYour answer will be:")
-        
-        checkAns2()
-            
-        ans = input("What is correct for Set:\n1 - Ordered,Duplicates are allowed\n2 - Unordered,duplicates values are dropped, can be used for comparison\n3 - Can not be changed\n\tYour answer will be:")
-        
-        checkAns2()
-            
-        ans = input("To print values from Set1 that apear in Set2:\n1 - inBoth = (Set1.NIMCA(Set2))\nprint(inBoth)\n2 - inBoth = (Set1.appear(Set2))\nprint(inBoth)\n3 - inBoth = (Set1.intersection(Set2))\nprint(inBoth)\n\tYour answer will be:")
-        
-        checkAns3()
-            
-        ans = input("To print values from Set1 that does not appear in Set2:\n1 - notInBoth = (Set1.not(Set2))\nprint(notInBoth)\n2 - notInBoth = (Set1.notContains(Set2))\nprint(notInBoth)\n3 - notInBoth = (Set1.difference(Set2))\nprint(notInBoth)\n\tYour answer will be:")
-        
-        checkAns3()
-            
-        ans = input("To print values from Set1 and from  Set2:\n1 - together = (Set1.union(Set2))\nprint(together)\n2 - together = (Set1.unionTogether(Set2))\nprint(together)\n3 - together = (Set1.unionBoth(Set2))\nprint(together)\n\tYour answer will be:")
-        
+        ans = input(
+            "To define a Tuple we use:\n1 - myTuple = ( , , )\n2 - myTuple = {, , }\n3 - myTuple = [ , , ]\n\tYour answer will be:")
         checkAns1()
-            
+
+        ans = input(
+            "To define a Set we use:\n1 - mySet = ( , , )\n2 - mySet = {, , }\n3 - mySet = [ , , ]\n\tYour answer will be:")
+
+        checkAns2()
+
+        ans = input(
+            "What is correct for Set:\n1 - Ordered,Duplicates are allowed\n2 - Unordered,duplicates values are dropped, can be used for comparison\n3 - Can not be changed\n\tYour answer will be:")
+
+        checkAns2()
+
+        ans = input(
+            "To print values from Set1 that apear in Set2:\n1 - inBoth = (Set1.NIMCA(Set2))\nprint(inBoth)\n2 - inBoth = (Set1.appear(Set2))\nprint(inBoth)\n3 - inBoth = (Set1.intersection(Set2))\nprint(inBoth)\n\tYour answer will be:")
+
+        checkAns3()
+
+        ans = input(
+            "To print values from Set1 that does not appear in Set2:\n1 - notInBoth = (Set1.not(Set2))\nprint(notInBoth)\n2 - notInBoth = (Set1.notContains(Set2))\nprint(notInBoth)\n3 - notInBoth = (Set1.difference(Set2))\nprint(notInBoth)\n\tYour answer will be:")
+
+        checkAns3()
+
+        ans = input(
+            "To print values from Set1 and from  Set2:\n1 - together = (Set1.union(Set2))\nprint(together)\n2 - together = (Set1.unionTogether(Set2))\nprint(together)\n3 - together = (Set1.unionBoth(Set2))\nprint(together)\n\tYour answer will be:")
+
+        checkAns1()
+
         ans = input("To dictionary\n\tYour answer will be:")
-        
+
         checkAns1()
-
-        
-
 
         # to clear screen in final version
-        #prints the score for the quiz 
+        # prints the score for the quiz
         print(f"You finished the quiz!\n{name} {lName}\n\tYour score for this quiz is {score}\n")
-        
-        #To go to next practice ? 
+
+        # To go to next practice ?
         next = input("To finish type: stop\nTo choose another practice type: next\n\tYour choice is: ")
-        if(next == "stop"):
+        if (next == "stop"):
             practice = False
-            
-            
-#########################################################################################################
+
+    #########################################################################################################
     if choice == "7":
-        #score in 
-        
-        score = 0 
-        
+        # score in
+
+        score = 0
+
         print("You chose the practice : Dictionary Data Type ")
         time.sleep(2)
-        
-        ans = input("The right way to create a dictionary:\n1 - myDict = {\"Key\": \"Value\"}\n2 - myDict = [\"Key\":\"Value\"]\n3 - myDict = (\"Key\": \"Value\") \n\tYour answer will be:")
+
+        ans = input(
+            "The right way to create a dictionary:\n1 - myDict = {\"Key\": \"Value\"}\n2 - myDict = [\"Key\":\"Value\"]\n3 - myDict = (\"Key\": \"Value\") \n\tYour answer will be:")
         checkAns1()
-        
-        ans = input("Dictionary - Get value by key name:\n1 - print(getByKey[\"Key\"])\n2 - myKey = myDict[\"key\"]\nprint(myKey)\n3 - myDict[\"The Key\"] = myName.append()\n\tYour answer will be:")
+
+        ans = input(
+            "Dictionary - Get value by key name:\n1 - print(getByKey[\"Key\"])\n2 - myKey = myDict[\"key\"]\nprint(myKey)\n3 - myDict[\"The Key\"] = myName.append()\n\tYour answer will be:")
         checkAns2()
-        
+
         # to clear screen in final version
-        #prints the score for the quiz 
+        # prints the score for the quiz
         print(f"You finished the quiz!\n{name} {lName}\n\tYour score for this quiz is {score}\n")
-        #To go to next practice ? 
+        # To go to next practice ?
         next = input("To finish type: stop\nTo choose another practice type: next\n\tYour choice is: ")
-        if(next == "stop"):
+        if (next == "stop"):
             practice = False
-        
-########################################################################################################
+
+    ########################################################################################################
     if choice == "8":
-        #score in 
-        
-        score = 0 
-        
+        # score in
+
+        score = 0
+
         print("You chose the practice : ")
         time.sleep(2)
-        
+
         ans = input("\n\tYour answer will be:")
         checkAns1()
-        
+
         # to clear screen in final version
-        #prints the score for the quiz 
+        # prints the score for the quiz
         print(f"You finished the quiz!\n{name} {lName}\n\tYour score for this quiz is {score}\n")
-        #To go to next practice ? 
+        # To go to next practice ?
         next = input("To finish type: stop\nTo choose another practice type: next\n\tYour choice is: ")
-        if(next == "stop"):
+        if (next == "stop"):
             practice = False
-        
+
 ########################################################################################################
 
 
